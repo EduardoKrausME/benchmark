@@ -62,8 +62,8 @@ class report_benchmark {
                     'during'    => $stop,
                     'id'        => $idtest,
                     'class'     => $this->get_feedback_class($stop, $result['limit'], $result['over']),
-                    'name'      => get_string($name.'name', 'report_benchmark'),
-                    'info'      => get_string($name.'moreinfo', 'report_benchmark'),
+                    'name'      => get_string($name.'name'),
+                    'info'      => get_string($name.'moreinfo'),
                 ) + $result;
         }
 
