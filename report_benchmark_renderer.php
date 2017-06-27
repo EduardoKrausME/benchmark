@@ -47,7 +47,7 @@ class report_benchmark_renderer
         $out .= html_writer::tag ( 'p', get_string ( 'infoaverage' ) );
         $out .= html_writer::tag ( 'p', get_string ( 'infodisclamer' ) );
 
-        $out .= html_writer::tag ( 'p', 'Baseado em <a href="https://github.com/mikasmart/benchmark">https://github.com/mikasmart/benchmark</a>' );
+        $out .= html_writer::tag ( 'p', 'Código em <a href="https://github.com/EduardoKrausME/benchmark" target="_blank">https://github.com/EduardoKrausME/benchmark</a> baeado em <a href="https://github.com/mikasmart/benchmark" target="_blank">https://github.com/mikasmart/benchmark</a>' );
 
         // Button to start the test
         $out .= html_writer::start_div ( 'continuebutton' );
