@@ -14,13 +14,13 @@ h3 span {
     color : #00AA00;
 }
 
-#benchmark {
-    margin : 0 auto;
-    width  : 800px;
-}
-
 #benchmark .continuebutton a.btn {
     margin : 0 10px 10px 10px;
+}
+
+#benchmarkresult {
+    margin : 0 auto;
+    width  : 800px;
 }
 
 #benchmarkresult th {
