@@ -56,8 +56,6 @@
 define ( 'BENCHFAIL_SLOWSERVER', 'slowserver' );
 define ( 'BENCHFAIL_SLOWPROCESSOR', 'slowprocessor' );
 define ( 'BENCHFAIL_SLOWHARDDRIVE', 'slowharddrive' );
-define ( 'BENCHFAIL_SLOWDATABASE', 'slowdatabase' );
-define ( 'BENCHFAIL_SLOWWEB', 'slowweb' );
 
 /**
  * Tests for the BenchMark report

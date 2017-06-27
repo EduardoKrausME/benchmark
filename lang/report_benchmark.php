@@ -40,8 +40,3 @@ $string[ 'slowprocessorsolution' ] = '<ul><li>Check that the equipment is enough
 $string[ 'slowharddrivelabel' ]    = 'The harddrive is too slow.';
 $string[ 'slowharddrivesolution' ] = '<ul><li>Check the harddrive state / temp folder</li><li>Change your harddrive or the temporary folder</li></ul>';
 
-$string[ 'slowdatabaselabel' ]    = 'The database is too slow.';
-$string[ 'slowdatabasesolution' ] = '<ul><li>Check <a href="http://dev.mysql.com/doc/refman/5.7/en/mysqlcheck.html" target="_blank">the database integrity</a></li><li>Optimze <a href="http://dev.mysql.com/doc/refman/5.7/en/server-parameters.html" target="_blank">the database</a></li></ul>';
-
-$string[ 'slowweblabel' ]    = 'The page is too slow to upload.';
-$string[ 'slowwebsolution' ] = '<ul><li>Clear the Moodle cache</a></li></ul>';

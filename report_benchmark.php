@@ -23,47 +23,49 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  *
  * HOW TO CREATE A TEST
- * @see testlib.php
+ * @see        testlib.php
  *
  */
-class report_benchmark {
+class report_benchmark
+{
 
     private $results = array();
 
     /**
      * benchmark constructor.
      */
-    public function __construct() {
+    public function __construct ()
+    {
 
         // Get the list of test
-        $tests  = $this->get_tests();
+        $tests  = $this->get_tests ();
         $benchs = array();
         $idtest = 0;
 
-        foreach($tests as $name) {
+        foreach ( $tests as $name ) {
 
             ++$idtest;
 
             // Inistialize and execute the test
-            $start  = microtime(true);
-            $result = $this->start_test($name);
+            $start  = microtime ( true );
+            $result = $this->start_test ( $name );
 
             // Populate if empty result
-            empty($result['limit']) ? $result['limit'] = 0 : null;
-            empty($result['over'])  ? $result['over'] = 0 : null;
+            empty( $result[ 'limit' ] ) ? $result[ 'limit' ] = 0 : null;
+            empty( $result[ 'over' ] ) ? $result[ 'over' ] = 0 : null;
 
             // Overwrite the result if start/stop if defined
-            $over_start = isset($result['start']) ? $result['start'] : $start;
-            $over_stop  = isset($result['stop'])  ? $result['stop']  : microtime(true);
-            $stop       = round($over_stop - $over_start, 3);
+            $over_start = isset( $result[ 'start' ] ) ? $result[ 'start' ] : $start;
+            $over_stop  = isset( $result[ 'stop' ] ) ? $result[ 'stop' ] : microtime ( true );
+            $stop       = round ( $over_stop - $over_start, 3 );
 
             // Store and merge result
-            $benchs[$name] = array(
-                    'during'    => $stop,
-                    'id'        => $idtest,
-                    'class'     => $this->get_feedback_class($stop, $result['limit'], $result['over']),
-                    'name'      => get_string($name.'name'),
-                    'info'      => get_string($name.'moreinfo'),
+            $benchs[ $name ] = array(
+                    'during' => $stop,
+                    'id'     => $idtest,
+                    'class'  => $this->get_feedback_class ( $stop, $result[ 'limit' ], $result[ 'over' ] ),
+                    'name'   => get_string ( $name . 'name' ),
+                    'info'   => get_string ( $name . 'moreinfo' ),
                 ) + $result;
         }
 
@@ -74,13 +76,15 @@ class report_benchmark {
 
     /**
      * Start a benchmark test
-     * 
+     *
      * @param string $name Test name
+     *
      * @return array Test result
      */
-    private function start_test($name) {
+    private function start_test ( $name )
+    {
 
-        return call_user_func(array('report_benchmark_test', $name));
+        return call_user_func ( array( 'report_benchmark_test', $name ) );
 
     }
 
@@ -89,16 +93,17 @@ class report_benchmark {
      *
      * @return array List of test
      */
-    private function get_tests() {
+    private function get_tests ()
+    {
 
         // Get the list of all static method in the class benchmark_test
-        $tests      = array();
-        $class      = new ReflectionClass(__CLASS__.'_test');
-        $methods    = $class->getMethods(ReflectionMethod::IS_STATIC);
+        $tests   = array();
+        $class   = new ReflectionClass( __CLASS__ . '_test' );
+        $methods = $class->getMethods ( ReflectionMethod::IS_STATIC );
 
         // Check if the method is in the class benchmark_test
-        foreach($methods as $method) {
-            if ($method->class == __CLASS__.'_test') {
+        foreach ( $methods as $method ) {
+            if ( $method->class == __CLASS__ . '_test' ) {
                 $tests[] = $method->name;
             }
         }
@@ -112,17 +117,20 @@ class report_benchmark {
      * @param int $during
      * @param int $limit
      * @param int $over
+     *
      * @return string Get the class
      */
-    private function get_feedback_class($during, $limit, $over) {
+    private function get_feedback_class ( $during, $limit, $over )
+    {
 
-        if ($during >= $over) {
+        if ( $during >= $over ) {
             $class = 'danger';
-        } elseif ($during >= $limit) {
+        } elseif ( $during >= $limit ) {
             $class = 'warning';
         } else {
             $class = 'success';
         }
+
         return $class;
 
     }
@@ -130,7 +138,8 @@ class report_benchmark {
     /**
      * @return array Get the result of all tests
      */
-    public function get_results() {
+    public function get_results ()
+    {
 
         return $this->results;
 
@@ -139,17 +148,18 @@ class report_benchmark {
     /**
      * @return array Get the total time and score of all tests
      */
-    public function get_total() {
+    public function get_total ()
+    {
 
         $total = 0;
 
-        foreach($this->results as $result) {
-            $total += $result['during'];
+        foreach ( $this->results as $result ) {
+            $total += $result[ 'during' ];
         }
 
         return array(
             'total' => $total,
-            'score' => ceil($total * 100),
+            'score' => ceil ( $total * 100 ),
         );
 
     }

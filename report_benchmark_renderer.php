@@ -52,11 +52,11 @@ class report_benchmark_renderer
         // Button to start the test
         $out .= html_writer::start_div ( 'continuebutton' );
 
-        $out .= '<a href="index.php?step=rum" class="btn btn-primary">' . get_string ( 'start' ) . '</a>';
+        $out .= '<a href="?step=rum" class="btn btn-primary">' . get_string ( 'start' ) . '</a>';
         $out .= html_writer::end_div ();
 
         $out .= html_writer::end_div ();
-        
+
         return $out;
     }
 
@@ -165,7 +165,7 @@ class report_benchmark_renderer
         // Display the share and redo button
         $out .= html_writer::start_div ( 'text-center' );
 
-        $out .= '<a href="index.php" class="btn btn-primary">' . get_string ( 'redo' ) . '</a>';
+        $out .= '<a href="?" class="btn btn-primary">' . get_string ( 'redo' ) . '</a>';
 
         $out .= html_writer::end_div ();
 
