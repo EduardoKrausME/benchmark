@@ -56,10 +56,8 @@ class report_benchmark_renderer
         $out .= html_writer::end_div ();
 
         $out .= html_writer::end_div ();
-
-
+        
         return $out;
-
     }
 
     /**
