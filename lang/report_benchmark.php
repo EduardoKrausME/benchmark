@@ -25,3 +25,16 @@ $string[ 'filereadname' ]        = 'Leitura de arquivos';
 $string[ 'filereadmoreinfo' ]    = 'Testar a velocidade de leitura no servidor';
 $string[ 'filewritename' ]       = 'Criação de arquivos';
 $string[ 'filewritemoreinfo' ]   = 'Testar a velocidade de gravação no servidor';
+
+/*
+ * Add your solution here
+ */
+
+$string[ 'slowserverlabel' ]    = 'Your web server is too slow.';
+$string[ 'slowserversolution' ] = '<ul><li>Set your Apache in <a href="https://httpd.apache.org/docs/2.4/en/mpm.html" target="_blank">multi-processing</a> mode or switch on <a href="https://nginx.org/" target="_blank">NGinx</a>.</li><li>If your Moodle is installed on your computer, you can try to deactivate your antivirus where Moodle is located. Do it with precaution.</li></ul>';
+
+$string[ 'slowprocessorlabel' ]    = 'Your processor is too slow.';
+$string[ 'slowprocessorsolution' ] = '<ul><li>Check that the equipment is enough to run Moodle.</li></ul>';
+
+$string[ 'slowharddrivelabel' ]    = 'The harddrive is too slow.';
+$string[ 'slowharddrivesolution' ] = '<ul><li>Check the harddrive state / temp folder</li><li>Change your harddrive or the temporary folder</li></ul>';
