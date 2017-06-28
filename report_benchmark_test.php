@@ -98,7 +98,7 @@ class report_benchmark_test extends report_benchmark
         $pass = 10000;
         while ( $i < $pass ) {
             ++$i;
-            file_get_contents ( $CFG->tempdir . '/benchmark.temp' );
+            @file_get_contents ( $CFG->tempdir . '/benchmark.temp' );
         }
         @unlink ( $CFG->tempdir . '/benchmark.temp' );
 
