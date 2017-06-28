@@ -100,7 +100,7 @@ class report_benchmark_test extends report_benchmark
             ++$i;
             file_get_contents ( $CFG->tempdir . '/benchmark.temp' );
         }
-        unlink ( $CFG->tempdir . '/benchmark.temp' );
+        @unlink ( $CFG->tempdir . '/benchmark.temp' );
 
         return array( 'limit' => .5, 'over' => .8, 'fail' => BENCHFAIL_SLOWHARDDRIVE );
 
@@ -123,7 +123,7 @@ class report_benchmark_test extends report_benchmark
             ++$i;
             file_put_contents ( $CFG->tempdir . '/benchmark.temp', $loremipsum );
         }
-        unlink ( $CFG->tempdir . '/benchmark.temp' );
+        @unlink ( $CFG->tempdir . '/benchmark.temp' );
 
         return array( 'limit' => 1, 'over' => 1.25, 'fail' => BENCHFAIL_SLOWHARDDRIVE );
 
