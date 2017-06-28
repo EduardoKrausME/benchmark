@@ -92,10 +92,16 @@ class report_benchmark_renderer
         $out .= html_writer::start_tag ( 'h3' );
         $out .= get_string ( 'scoremsg' );
 
-        $out .= html_writer::start_tag ( 'span' );
-        $out .= number_format ( $totals[ 'total' ], 3, ',', '' ) . " segundos";
+        $class = "text-success";
+        if ( $totals[ 'total' ] > 2 )
+            $class = "text-danger";
+        elseif ( $totals[ 'total' ] > 1 )
+            $class = "text-warning";
 
+        $out .= html_writer::start_tag ( 'span', $class );
+        $out .= number_format ( $totals[ 'total' ], 3, ',', '' ) . " segundos";
         $out .= html_writer::end_tag ( 'span' );
+
         $out .= html_writer::end_tag ( 'h3' );
 
         $out .= html_writer::end_div ();
