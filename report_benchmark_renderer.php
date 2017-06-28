@@ -93,7 +93,7 @@ class report_benchmark_renderer
         $out .= get_string ( 'scoremsg' );
 
         $out .= html_writer::start_tag ( 'span' );
-        $out .= $totals[ 'score' ] . " milesegundos";
+        $out .= number_format ( $totals[ 'total' ], 3, ',', '' ) . " segundos";
 
         $out .= html_writer::end_tag ( 'span' );
         $out .= html_writer::end_tag ( 'h3' );
@@ -133,14 +133,6 @@ class report_benchmark_renderer
                         <td class=text-center>" . number_format ( $totals[ 'total' ], 3, ',', '' ) . " Seg</td>
                         <td colspan=2>&nbsp;</td>
                     </tr>";
-
-        //$out
-        //    .= "
-        //            <tr class='footer'>
-        //                <td colspan=2 class=text-right>" . get_string ( 'score' ) . "</td>
-        //                <td class=text-center>" . $totals[ 'score' ] . " pontos</td>
-        //                <td colspan=2>&nbsp;</td>
-        //            </tr>";
 
         $out .= html_writer::end_tag ( 'table' );
 
