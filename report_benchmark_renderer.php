@@ -134,13 +134,13 @@ class report_benchmark_renderer
                         <td colspan=2>&nbsp;</td>
                     </tr>";
 
-        $out
-            .= "
-                    <tr class='footer'>
-                        <td colspan=2 class=text-right>" . get_string ( 'score' ) . "</td>
-                        <td class=text-center>" . $totals[ 'score' ] . " pontos</td>
-                        <td colspan=2>&nbsp;</td>
-                    </tr>";
+        //$out
+        //    .= "
+        //            <tr class='footer'>
+        //                <td colspan=2 class=text-right>" . get_string ( 'score' ) . "</td>
+        //                <td class=text-center>" . $totals[ 'score' ] . " pontos</td>
+        //                <td colspan=2>&nbsp;</td>
+        //            </tr>";
 
         $out .= html_writer::end_tag ( 'table' );
 
