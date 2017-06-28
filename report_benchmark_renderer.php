@@ -93,7 +93,7 @@ class report_benchmark_renderer
         $out .= get_string ( 'scoremsg' );
 
         $out .= html_writer::start_tag ( 'span' );
-        $out .= $totals[ 'score' ] . " pontos";
+        $out .= $totals[ 'score' ] . " milesegundos";
 
         $out .= html_writer::end_tag ( 'span' );
         $out .= html_writer::end_tag ( 'h3' );

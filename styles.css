@@ -4,10 +4,11 @@ h3 {
     border        : 1px solid #DDDDDD;
     width         : 450px;
     margin        : 20px auto 30px auto;
-    padding       : 10px 0;
+    padding       : 10px;
     border-radius : 4px;
     background    : #F5F5F5;
     box-shadow    : inset 1px 1px 3px 0 #FFFFFF, inset -1px -1px 1px 0 #CFCFCF;
+    display       : inline-block;
 }
 
 h3 span {
