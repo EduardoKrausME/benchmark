@@ -163,7 +163,7 @@ class report_benchmark_renderer
         // Display the share and redo button
         $out .= html_writer::start_div ( 'text-center' );
 
-        $out .= '<a href="?" class="btn btn-primary">' . get_string ( 'redo' ) . '</a>';
+        $out .= '<a href="?step=rum&h='.time().'" class="btn btn-primary">' . get_string ( 'redo' ) . '</a>';
 
         $out .= html_writer::end_div ();
 
